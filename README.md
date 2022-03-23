@@ -1,2 +1,2 @@
-# HackerRank
- My HackerRank Solution
+# C Challanges
+ My c problems Solution
