@@ -1,2 +1,2 @@
-# C Challanges
+# C Challenges
  My c problems Solution
