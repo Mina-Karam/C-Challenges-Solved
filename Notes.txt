@@ -1,0 +1,30 @@
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+scanf("%*[\n] %[^\n]", z);
+
+%*[\n] =>> 
+%[^\n] =>> will read all characters until you reach \n 
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+In dealing with string
+
+  * Check if the input is null/empty by
+	if(!phrase) or if(phrase == NULL)
+		return false;
+
+  * Loop inside array of string
+	while((c == *phrase++) != '\0') // Can't do it direct with (phrase != '\0') becouse of array is a pointer.
+	
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+In dealing with Asci Codes in characters
+  
+  * 65 = A, 90 = Z --- 97 = a, 122 = z
+  * The difference between a -> A or z -> Z is 32 
+
+  * We can store all char in "unsigned long long mask = 0;"
+	by using this expression (1<<(c-'a')) // c is the char , a is = 97 , notes that here we deal with a >> z as small only so if you need to deal with the A >> Z, you can just add +32 to the char it will be small at asci code. 
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
