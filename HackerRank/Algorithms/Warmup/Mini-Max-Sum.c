@@ -1,45 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define n 5
-
-int main()
+void miniMaxSum(int arr_count, int* arr) 
 {
-    long long arr[n];
-    long long minimum_sum = 0, maximum_sum = 0;
-    int temp = 0;
-
-    for (int i = 0; i < n; i++)
+    int sum = 0, i;
+    int min, max;
+    
+    /* Get the summition of all elements in array */
+    for (i = 0; i < arr_count ; i++) 
     {
-        scanf("%lld", &arr[i]);
+        sum += arr[i];
     }
-
-    // loop to access each array element
-    for (int i = 0 ; i < n - 1 ; i++)
+    
+    min = arr[0]; // set the first element as min
+    max = arr[0]; // set the first element as max
+    
+    /* Loop inside array */
+    for (i = 1; i < arr_count ; i++) 
     {
-        // loop to compare array elements
-        for (int j = 0 ; j < n - i - 1 ; j++)
-        {
-            // compare two adjacent elements
-            if (arr[j] > arr[j+1])
-            {
-                // swapping occurs
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp; 
-            }
-        }
+        /* Compare current elements with max*/
+        if(arr[i] < max)
+            max = arr[i]; // if ture set it as max;
+        
+        /* Compare current elements with max*/
+        if(arr[i] > min)
+            min = arr[i]; // if ture set it as min;
     }
-
-    for (int j = 0; j < n - 1; j++)
-    {
-        minimum_sum += arr[j];
-    }
-    for (int m = 1; m < n; m++)
-    {
-        maximum_sum += arr[m];
-    }
-
-    printf("%lld %lld",minimum_sum, maximum_sum);
-
-    return 0;
+    
+    /* Print sum_max & sum_min */
+    printf("%d %d", sum - min, sum - max);
 }
